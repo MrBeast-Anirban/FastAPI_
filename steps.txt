@@ -1,0 +1,16 @@
+1. Create a Environment:
+    python3 -m venv myenv
+2. Activate the environment myenv
+    source myenv/bin/activate 
+3. Install Dependencies
+    pip install -r requirements.txt
+4. Run API code
+    python -m uvicorn file_name:app --reload
+5. Go to the url
+    http://127.0.0.1:8000
+5. Checkout Interactive Documentation
+    http://127.0.0.1:8000/docs
+
+
+Get requirements.txt from virtual_environment
+pip freeze > requirements.txt

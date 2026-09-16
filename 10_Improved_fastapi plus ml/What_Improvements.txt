@@ -1,0 +1,19 @@
+1. Create a new Folder
+2. Field Validator for city + occupation features
+3. Add routes
+    - Home -> Health Check
+4. Add model version
+5. Seperation of Logic/Concern -> different file and different directory for every component
+    a. Pydantic model -> make a schema folder for pydantic model and its variable
+    b. City tier -> create a new folder config to have cities name
+    c. Ml Logic -> in model folder add a new file predict.py which contain the ml part from app.py
+6. Try Except -> Model Prediction is dependent of some other file's output, use try and except
+7. Add Confidence Score -> Provide extra details with the prediction
+8. Response Model -> Defines the structure of the data that your API endpoint will return ( in simple terms --> validate api output)
+
+
+
+
+* To run the project 
+python3 -m uvicorn app:app --reload
+streamlit run frontend.py

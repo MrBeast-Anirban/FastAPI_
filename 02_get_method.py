@@ -1,0 +1,80 @@
+from fastapi import FastAPI
+import json
+
+app = FastAPI()
+
+def load_data():
+    with open('patients.json') as f:
+        data = json.load(f)
+    return data 
+
+# app decorator to create a route for the root endpoint. Listening to get rquests.
+@app.get("/")
+def hello():
+    return {'message': "Patient Management System API"}
+
+@app.get("/about")
+def about():
+    return {'message': "A fully functional API to manage your patients records."}
+
+@app.get("/view")
+def view_patients():
+    data = load_data()
+    return data
+
+
+# python3 -m uvicorn 2_get_method:app --reload
+"""
+{
+  "P001": {
+    "name": "Ananya Verma",
+    "city": "Guwahati",
+    "age": 28,
+    "gender": "female",
+    "height": 1.65,
+    "weight": 90,
+    "bmi": 33.06,
+    "verdict": "Obese"
+  },
+  "P002": {
+    "name": "Ravi Mehta",
+    "city": "Mumbai",
+    "age": 35,
+    "gender": "male",
+    "height": 1.75,
+    "weight": 85,
+    "bmi": 27.76,
+    "verdict": "Overweight"
+  },
+  "P003": {
+    "name": "Sneha Kulkarni",
+    "city": "Pune",
+    "age": 22,
+    "gender": "female",
+    "height": 1.6,
+    "weight": 45,
+    "bmi": 17.58,
+    "verdict": "Underweight"
+  },
+  "P004": {
+    "name": "Arjun Verma",
+    "city": "Mumbai",
+    "age": 40,
+    "gender": "male",
+    "height": 1.8,
+    "weight": 90,
+    "bmi": 27.78,
+    "verdict": "Normal"
+  },
+  "P005": {
+    "name": "Neha Sinha",
+    "city": "Kolkata",
+    "age": 30,
+    "gender": "female",
+    "height": 1.55,
+    "weight": 75,
+    "bmi": 31.22,
+    "verdict": "Obese"
+  }
+}
+"""

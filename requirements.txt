@@ -1,0 +1,10 @@
+# FastAPI Setup
+fastapi
+uvicorn
+pydantic
+starlette
+pandas
+streamlit
+requests
+scikit-learn==1.6.1
+numpy
