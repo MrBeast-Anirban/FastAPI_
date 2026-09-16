@@ -52,7 +52,7 @@ pip install fastapi uvicorn
 Start the local development server using **Uvicorn**:
 
 ```bash
-uvicorn main:app --reload
+python3 -m uvicorn main:app --reload
 ```
 *Note: Replace `main` with your entrypoint file name if your main file is named differently (e.g., `app:app`).*
 
